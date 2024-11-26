@@ -9,11 +9,11 @@ resource "aws_launch_template" "example" {
   name_prefix          = "example-"
   image_id             = "ami-0866a3c8686eaeeba" # Replace with your AMI ID
   instance_type        = "t2.micro"
-  key_name             = "Pardeep" # Replace with your SSH key
+  key_name             = "terra-key" # Replace with your SSH key
 
   network_interfaces {
     associate_public_ip_address = true
-    security_groups             = ["sg-0b1706bc12924bff6"] # Replace with your security group
+    security_groups             = ["sg-0e3769708b4947e03"] # Replace with your security group
   }
 }
 
@@ -27,7 +27,7 @@ resource "aws_autoscaling_group" "example" {
   min_size         = var.min_size
   max_size         = var.max_size
   desired_capacity = var.desired_capacity
-  vpc_zone_identifier = ["subnet-0bb045e90acb875fc"] # Replace with your subnet ID
+  vpc_zone_identifier = ["subnet-0f5adb0574bd02c7a"] # Replace with your subnet ID
 
   tag {
     key                 = "Name"
